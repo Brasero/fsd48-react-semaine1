@@ -1,0 +1,11 @@
+.listContainer {
+    border: 1px solid green;
+    min-width: 350px;
+    min-height: 500px;
+    padding: 15px;
+}
+
+.header {
+    display: flex;
+    gap: 15px;
+}
