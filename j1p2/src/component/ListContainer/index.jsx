@@ -1,4 +1,6 @@
 import {useState} from "react"
+import ButtonList from "../ButtonList/index.jsx";
+import List from "../List/index.jsx";
 function ListContainer() {
 
     const initialState = {
@@ -41,20 +43,10 @@ function ListContainer() {
 
     return (
         <div>
-            <div>
-                {
-                    state.button.map((button) => {
-                        return <button onClick={() => handleClick(button)}>{button}</button>
-                    })
-                }
-            </div>
-            <ul>
-                {
-                    state.list.map((elem) => {
-                        return <li>{elem} <button onClick={() => handleClick(elem)} style={{background: 'red'}}>X</button></li>
-                    })
-                }
-            </ul>
+            <ButtonList button={state.button} handleClick={handleClick} />
+            <List list={state.list} handleClick={handleClick} />
+            <ButtonList button={state.button} handleClick={handleClick} />
+            <List list={state.list} handleClick={handleClick} />
         </div>
     )
 }
