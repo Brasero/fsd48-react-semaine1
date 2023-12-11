@@ -1,13 +1,13 @@
 import './App.css';
-import Wrapper from "./component/Wrapper/index.jsx";
-import Number from "./component/Number/index.jsx";
+import CustomButtonClick from "./component/CustomButtonClick/index.jsx";
 
 function App() {
 
   return (
     <>
-        <Wrapper />
-        <Number num={12} />
+        <CustomButtonClick value={2} />
+        <CustomButtonClick />
+        <CustomButtonClick value={5} />
     </>
   )
 }
