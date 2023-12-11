@@ -4,11 +4,24 @@ import Row from "../Row/index.jsx";
 
 function Game() {
 
-    const [game, setGame] = useState(Array(9).fill(''))
-    const [player, setPlayer] = useState(false);
-    const [message, setMessage] = useState('Premier joueur : O');
-    const disabled = false
+    const initialState = {
+        game: Array(9).fill(''),
+        player: false,
+        message: 'Premier joueur : O',
+        isRunning: true
+    }
 
+    const [game, setGame] = useState(initialState.game);
+    const [player, setPlayer] = useState(initialState.player);
+    const [message, setMessage] = useState(initialState.message);
+    const [isRunning, setIsRunning] = useState(initialState.isRunning);
+
+    const reset = () => {
+        setGame(initialState.game)
+        setPlayer(initialState.player)
+        setMessage(initialState.message)
+        setIsRunning(initialState.isRunning)
+    }
     const changePlayer = () => {
         setPlayer(!player)
     }
@@ -16,7 +29,7 @@ function Game() {
     const onClick = (index) => {
         const newGame = [...game]
 
-        if(game[index] !== '') {
+        if(game[index] !== '' || !isRunning) {
             return
         }
 
@@ -52,6 +65,7 @@ function Game() {
         for (let i = 0; i < winLines.length; i++) {
             const [a, b, c] = winLines[i]
             if (game[a] !== "" && game[a] === game[b] && game[b] === game[c]) {
+                setIsRunning(false)
                 return game[a];
             }
         }
@@ -65,7 +79,7 @@ function Game() {
             <Row rowNumber={1} values={game} handleClick={onClick} />
             <Row rowNumber={2} values={game} handleClick={onClick} />
             {
-                disabled && <span>Je m'affiche</span>
+                !isRunning && <button onClick={reset}>Reset</button>
             }
         </>
     )
