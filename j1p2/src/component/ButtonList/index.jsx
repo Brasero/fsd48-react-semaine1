@@ -1,11 +1,15 @@
+import {useEffect} from "react";
+import Button from "../Button/index.jsx";
 
 function ButtonList({button, handleClick}) {
+
+
 
     return (
         <div>
             {
                 button.map((button) => {
-                    return <button onClick={() => handleClick(button)}>{button}</button>
+                    return <Button button={button} handleClick={handleClick} />
                 })
             }
         </div>

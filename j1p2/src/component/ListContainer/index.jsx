@@ -45,8 +45,6 @@ function ListContainer() {
         <div>
             <ButtonList button={state.button} handleClick={handleClick} />
             <List list={state.list} handleClick={handleClick} />
-            <ButtonList button={state.button} handleClick={handleClick} />
-            <List list={state.list} handleClick={handleClick} />
         </div>
     )
 }

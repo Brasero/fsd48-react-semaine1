@@ -29,7 +29,7 @@ function Game() {
     const onClick = (index) => {
         const newGame = [...game]
 
-        if(game[index] !== '' || !isRunning) {
+        if(game[index] !== '' || !isRunning  || !equality(game)) {
             return
         }
 
@@ -46,8 +46,20 @@ function Game() {
         if(theWinner) {
             setMessage(`Le gagnant est : ${theWinner}`)
         } else {
+            if(!equality(newGame)) {
+                setMessage(`Match null`)
+                return
+            }
             setMessage(`Prochain joueur : ${player ? 'O' : 'X'}`)
         }
+    }
+
+    const equality = (game) => {
+        if (game.includes('')) {
+            return true
+        }
+        setIsRunning(false)
+        return false
     }
 
     const winner = (game) => {
