@@ -8,9 +8,11 @@ function App() {
         { notes: [11, 17, 19], name: "Sophie" },
     ];
 
+    const schoolName = "l'école du web"
+
   return (
     <>
-        <Students students={students} />
+        <Students students={students} schoolName={schoolName} />
     </>
   )
 }

@@ -1,5 +1,5 @@
 
-function Student({student}) {
+function Student({student, schoolName}) {
     const average = (student.notes.reduce((acc, current) => {
         return acc + current
     }, 0)) / student.notes.length
@@ -21,6 +21,9 @@ function Student({student}) {
             <div>
                 <span>Moyenne de l'élève : </span>
                 <strong> {average.toFixed(2)} / 20</strong>
+            </div>
+            <div>
+                {schoolName}
             </div>
         </div>
     )
