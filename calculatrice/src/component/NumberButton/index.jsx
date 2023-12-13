@@ -1,4 +1,4 @@
-
+import './numberButton.css'
 function NumberButton({dispatch}) {
 
     const buttonArray = Array(10).fill('')
@@ -16,13 +16,20 @@ function NumberButton({dispatch}) {
         })
     }
 
+    const handleDot = () => {
+        dispatch({
+            type: 'dot'
+        })
+    }
+
     return (
         <div className={'numberButton'}>
             {
                 buttonArray.map((_, index) => {
-                    return <button key={`number-${index}`} onClick={() => handleClick(index)}>{index}</button>
+                    return <button key={`number-${index}`} onClick={() => handleClick(9 - index)}>{9 - index}</button>
                 })
             }
+            <button onClick={handleDot}>.</button>
             <button onClick={handleReset}>C</button>
         </div>
     )

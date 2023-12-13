@@ -1,3 +1,4 @@
+import './calculatrice.css';
 import NumberButton from "../NumberButton/index.jsx";
 import CalcButton from "../CalcButton/index.jsx";
 import Computer from "../Computer/index.jsx";

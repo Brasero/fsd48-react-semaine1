@@ -1,4 +1,4 @@
-
+import './calcButton.css';
 function CalcButton({dispatch}) {
 
     const calcs = ['+', '-', 'x', "%", '=']
@@ -22,6 +22,7 @@ function CalcButton({dispatch}) {
                         <button key={`calc-${index}`} onClick={() => handleClick(value)}>{value}</button>
                 })
             }
+            <button>CE</button>
         </div>
     )
 }

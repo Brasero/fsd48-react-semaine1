@@ -1,0 +1,34 @@
+.numberButton {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+}
+
+.numberButton button {
+    aspect-ratio: 1/1;
+    border-radius: 50px;
+    border-style: none;
+    background: linear-gradient(145deg, #23394c, #1e3040);
+    box-shadow:  11px 11px 22px #0d151c,
+    -11px -11px 22px #355572;
+    color: antiquewhite;
+    transition: all .1s ease-in;
+    transform: scale(1.1);
+    border-bottom: 2px solid #0d151c;
+}
+
+.numberButton button:hover {
+    color: #fff;
+    text-shadow: 0 0 1px white;
+}
+
+.numberButton button:active {
+    box-shadow: none;
+    border: 0 solid transparent;
+    transform: translateY(2px);
+}
+
+.numberButton button:last-of-type {
+    background: linear-gradient(145deg, #ffd455, #e6b247);
+    color: white;
+}
