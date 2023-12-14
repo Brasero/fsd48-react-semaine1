@@ -1,0 +1,7 @@
+.number_container {
+    display: flex;
+    align-items: center;
+    max-width: 300px;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
